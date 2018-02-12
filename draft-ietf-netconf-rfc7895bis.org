@@ -18,7 +18,7 @@ There is a need for a standard mechanism to expose which YANG modules
 management server.
 
 This document defines the YANG module "ietf-yang-library" that
-provides this informaton. This version of the YANG library is
+provides this information. This version of the YANG library is
 compatible with the Network Management Datastore Architecture (NMDA)
 ^I-D.ietf-netmod-revised-datastores^. The previous version of the YANG
 library, defined in ^RFC7895^, is not compatible with the NMDA since
