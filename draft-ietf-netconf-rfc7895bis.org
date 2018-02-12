@@ -30,8 +30,8 @@ to the YANG modules supported by conventional configuration
 datastores.
 
 The old YANG library definitions have been retained (for backwards
-compability reasons) but the definitions have been marked as
-deprecated. For backwards compatability, an NMDA-supporting server
+compatibility reasons) but the definitions have been marked as
+deprecated. For backwards compatibility, an NMDA-supporting server
 SHOULD populate the deprecated "/modules-state" tree in a
 backwards-compatible manner.  The new "/yang-library" tree would be
 ignored by legacy clients, while providing all the data needed for
@@ -316,7 +316,7 @@ module list information will help an attacker identify server
 implementations with such a defect, in order to launch a
 denial-of-service attack on the device.
 
-* Acknowledgements
+* Acknowledgments
 
 Contributions to this material by Andy Bierman are based upon work
 supported by the The Space & Terrestrial Communications Directorate
@@ -372,7 +372,7 @@ Newlines in leaf values are added for formatting reasons.
 
 * Example YANG Library Instance for an Advanced Server
 
-The following example extends the preceding Basic Server YANG Libary
+The following example extends the preceding Basic Server YANG Library
 example, by using modules from ^I-D.ietf-netmod-rfc8022bis^ and
 ^I-D.ietf-i2rs-yang-network-topo^, to illustrate a slightly more
 advanced server that:
