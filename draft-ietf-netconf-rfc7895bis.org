@@ -36,7 +36,7 @@ SHOULD populate the deprecated "/modules-state" tree in a
 backwards-compatible manner.  The new "/yang-library" tree would be
 ignored by legacy clients, while providing all the data needed for
 NMDA-aware clients, which would themselves ignore the "/modules-state"
-tree.  The recommended approach to populate /modules-state is to
+tree.  The recommended approach to populate "/modules-state" is to
 report the schema for YANG modules that are configurable via
 conventional datastores and for which config false data nodes are
 returned via a NETCONF <get> operation, or equivalent.
@@ -187,7 +187,7 @@ schema. A datastore schema is a union of module sets and every module
 set is a collection of modules and submodules, including the modules
 and submodules used for imports. Note that multiple datastores may
 refer to the same datastore schema. Furthermore, it is possible that
-individual datastore schema share module sets. A common use case is the
+individual datastore schemas share module sets. A common use case is the
 operational state datastore schema which is a superset of the schema
 used by conventional configuration datastores.
 
@@ -253,7 +253,7 @@ library supports the YANG modules written in any version of YANG.
 RFC Ed.: update the date below with the date of RFC publication and
 remove this note.
 
-!! include-figure ietf-yang-library.yang extract-to="ietf-yang-library@2018-01-26.yang"
+!! include-figure ietf-yang-library.yang extract-to="ietf-yang-library@2018-02-21.yang"
 
 * IANA Considerations @iana@
 
