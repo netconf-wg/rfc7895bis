@@ -118,8 +118,9 @@ used by the module MUST be identified.
 - feature list: The name of each YANG feature supported by the
 server, in a given datastore schema, MUST be identified.
 
-- deviation list: The name of each YANG module used for deviation
-statements, in a given datastore schema, MUST be identified.
+- deviation list: The name of each YANG module with deviation
+statements affecting a given YANG module, in a given datastore schema,
+MUST be identified.
 
 In addition, the following information is needed by a client
 application for each datastore supported by a server:
