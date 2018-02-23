@@ -67,17 +67,19 @@
       <name>ietf-hardware</name>
       <revision>2018-12-18</revision> <!-- RFC Ed. update this -->
       <namespace><!-- PPL -->urn:ietf:params:xml:ns:yang:ietf-hardware</namespace>
+      <deviation>example-vendor-hardware-deviations</deviation>
     </module>
     <module>
       <name>ietf-routing</name>
       <revision>2018-01-25</revision> <!-- RFC Ed. update this -->
       <namespace><!-- PPL -->urn:ietf:params:xml:ns:yang:ietf-routing</namespace>
-      <feature>
-        <name>multiple-ribs</name>
-      </feature>
-      <feature>
-        <name>router-id</name>
-      </feature>
+      <feature>multiple-ribs</feature>
+      <feature>router-id</feature>
+    </module>
+    <module>
+      <name>example-vendor-hardware-deviations</name>
+      <revision>2018-01-31</revision>
+      <namespace><!-- PPL -->urn:example:example-vendor-hardware-deviations</namespace>
     </module>
     <import-only-module>
       <name>ietf-inet-types</name>
@@ -96,15 +98,6 @@
     </import-only-module>
   </module-set>
 
-  <module-set>
-    <name>state-only-vendor-deviation-modules</name>
-    <module>
-      <name>example-vendor-hardware-deviations</name>
-      <revision>2018-01-31</revision> <!-- RFC Ed. update this -->
-      <namespace><!-- PPL -->urn:example:example-vendor-hardware-deviations</namespace>
-    </module>
-  </module-set>
-
   <schema>
     <name>config-schema</name>
     <module-set>config-state-modules</module-set>
@@ -119,7 +112,6 @@
     <module-set>config-state-modules</module-set>
     <module-set>dynamic-config-state-modules</module-set>
     <module-set>state-only-modules</module-set>
-    <module-set>state-only-vendor-deviation-modules</module-set>
   </schema>
 
   <datastore>

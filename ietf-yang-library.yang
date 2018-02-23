@@ -130,40 +130,30 @@ module ietf-yang-library {
     description
       "Parameters for describing the implementation of a module.";
 
-    list feature {
-      key "name";
+    leaf-list feature {
+      type yang:yang-identifier;
       description
         "List of YANG feature names from this module that are
          supported by the server, regardless whether they are defined
          in the module or any included submodule.";
-      leaf name {
-        type yang:yang-identifier;
-        description
-          "A feature supported by the server.";
-      }
     }
-    list deviation {
-      key "module";
+    leaf-list deviation {
+      type leafref {
+        path "../../module/name";
+      }
       description
         "List of YANG deviation modules used by this server to modify
          the conformance of the module associated with this entry.
          Note that the same module can be used for deviations for
          multiple modules, so the same entry MAY appear within
-         multiple 'module' entries.";
+         multiple 'module' entries.
 
-      leaf module {
-        type leafref {
-          path "../../../module/name";
-        }
-        description
-          "A module that deviates the module associated with this
-           entry. This reference MUST NOT (directly or indirectly)
-           refer to the module being deviated.
+         This reference MUST NOT (directly or indirectly)
+         refer to the module being deviated.
 
-           Clients, MUST make sure that they handle a situation
-           where a module deviates itself (directly or indirectly)
-           gracefully.";
-      }
+         Robust clients may want to make sure that they handle a
+         situation where a module deviates itself (directly or
+         indirectly) gracefully.";
     }
   }
 
@@ -283,9 +273,9 @@ module ietf-yang-library {
         "A datastore schema that may be used by one or more
          datastores.
 
-         The schema must be valid and referentially complete, i.e., it
-         must contain modules to satisfy all used import statements
-         for all modules specified in the schema";
+         The schema must be valid and referentially complete, i.e.,
+         it must contain modules to satisfy all used import
+         statements for all modules specified in the schema.";
 
       leaf name {
         type string;
