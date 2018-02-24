@@ -13,6 +13,7 @@ module ietf-yang-library {
   }
   import ietf-datastores {
     prefix ds;
+    // RFC Ed.: update the reference below with the actual RFC number
     reference "I-D.ietf-revised-datastores:
                Network Management Datastore Architecture.";
   }
