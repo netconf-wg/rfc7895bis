@@ -171,12 +171,10 @@ module ietf-yang-library {
       key "name";
       description
         "An entry in this list represents a module implemented by the
-         server with a particular set of supported features and
-         deviations.
-
-         The server implements one or more protocol-accessible
-         objects defined in the YANG module identified in this entry.
-         This includes deviation statements defined in the module.";
+         server, as per RFC 7950 section 5.6.5, with a particular set
+         of supported features and deviations.";
+      reference
+        "RFC 7950: The YANG 1.1 Data Modeling Language.";
 
       uses module-identification-leafs;
 
