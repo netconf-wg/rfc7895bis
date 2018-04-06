@@ -22,7 +22,9 @@
 
   ietf-ref:RFC8040
 
-  ietf-ref:I-D.ietf-netmod-revised-datastores
+  ietf-ref:RFC8174
+
+  ietf-ref:RFC8342
 
 </references>
 
@@ -34,23 +36,23 @@
 
   ietf-ref:RFC7895
 
-  ietf-ref:I-D.ietf-netmod-yang-tree-diagrams
+  ietf-ref:RFC8340
 
   ietf-ref:I-D.ietf-netconf-nmda-netconf
 
   ietf-ref:I-D.ietf-netconf-nmda-restconf
 
-  ietf-ref:I-D.ietf-netmod-rfc7223bis
+  ietf-ref:RFC8343
 
-  ietf-ref:I-D.ietf-netmod-rfc7277bis
+  ietf-ref:RFC8344
 
-  ietf-ref:I-D.ietf-netmod-entity
+  ietf-ref:RFC8348
 
   ietf-ref:I-D.ietf-netmod-schema-mount
 
-  ietf-ref:I-D.ietf-netmod-rfc8022bis
+  ietf-ref:RFC8349
 
-  ietf-ref:I-D.ietf-i2rs-yang-network-topo
+  ietf-ref:RFC8345
 
 </references>
 

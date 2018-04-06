@@ -14,13 +14,13 @@ This document obsoletes RFC 7895.
 
 There is a need for a standard mechanism to expose which YANG modules
 ^RFC7950^, datastores and datastore schemas
-^I-D.ietf-netmod-revised-datastores^ are in use by a network
+^RFC8342^ are in use by a network
 management server.
 
 This document defines the YANG module "ietf-yang-library" that
 provides this information. This version of the YANG library is
 compatible with the Network Management Datastore Architecture (NMDA)
-^I-D.ietf-netmod-revised-datastores^. The previous version of the YANG
+^RFC8342^. The previous version of the YANG
 library, defined in ^RFC7895^, is not compatible with the NMDA since
 it assumes that all datastores have exactly the same schema.  This is
 not necessarily true in the NMDA since dynamic configuration datastores
@@ -56,19 +56,20 @@ their cache is out of date.
 All NETCONF servers supporting YANG 1.1 ^RFC7950^ are required to
 support YANG Library (see Section 5.6.4 of RFC 7950). NETCONF servers
 implementing the NETCONF extensions to support the NMDA
-^I-D.ietf-netconf-nmda-netconf^ must implement at least the version of
+^I-D.ietf-netconf-nmda-netconf^ MUST implement at least the version of
 the YANG library defined in this document. Similarly, all RESTCONF
 servers are required to support YANG Library (see Section 10 of RFC
 8040). RESTCONF servers implementing the RESTCONF extensions to
-support the NMDA ^I-D.ietf-netconf-nmda-restconf^ must implement at
+support the NMDA ^I-D.ietf-netconf-nmda-restconf^ MUST implement at
 least the version of the YANG library defined in this document.
 
-The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-"SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-"OPTIONAL" in this document are to be interpreted as described in BCP
-14, ^RFC2119^.
+** Terminology
 
-* Terminology
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
+"MAY", and "OPTIONAL" in this document are to be interpreted as
+described in BCP 14 ^RFC2119^ ^RFC8174^ when, and only when, they
+appear in all capitals, as shown here.
 
 The following terms are defined in ^RFC7950^:
 
@@ -79,7 +80,7 @@ The following terms are defined in ^RFC7950^:
 This document uses the phrase "implementing a module" as defined in
 ^RFC7950^ Section 5.6.5.
 
-The following terms are defined in ^I-D.ietf-netmod-revised-datastores^:
+The following terms are defined in ^RFC8342^:
 
 - datastore
 - datastore schema
@@ -101,7 +102,7 @@ The following terms are used within this document:
   of the YANG library.
 
 Tree diagrams used in this document use the notation defined in
-^I-D.ietf-netmod-yang-tree-diagrams^.
+^RFC8340^.
 
 * Objectives
 
@@ -116,14 +117,14 @@ have a revision.  This is derived from the most recent revision
 statement within the module or submodule.
 
 - submodule list: The name, and if defined, revision of each submodule
-used by the module MUST be identified.
+used by the module must be identified.
 
 - feature list: The name of each YANG feature supported by the
-server, in a given datastore schema, MUST be identified.
+server, in a given datastore schema, must be identified.
 
 - deviation list: The name of each YANG module with deviation
 statements affecting a given YANG module, in a given datastore schema,
-MUST be identified.
+must be identified.
 
 In addition, the following information is needed by a client
 application for each datastore supported by a server:
@@ -250,7 +251,7 @@ YANG library checksum changes.
 
 The "ietf-yang-library" YANG module imports definitions from
 "ietf-yang-types" and "ietf-inet-types" defined in ^RFC6991^ and from
-"ietf-datastores" defined in ^I-D.ietf-netmod-revised-datastores^.
+"ietf-datastores" defined in ^RFC8342^.
 While the YANG module is defined using YANG version 1.1, the YANG
 library supports the YANG modules written in any version of YANG.
 
@@ -365,10 +366,10 @@ This document updates ^RFC7895^ in the following ways:
 * Example YANG Library Instance for a Basic Server
 
 The following example shows the YANG Library of a basic server
-implementing the "ietf-interfaces" ^I-D.ietf-netmod-rfc7223bis^ and
-"ietf-ip" ^I-D.ietf-netmod-rfc7277bis^ modules in the <running>,
+implementing the "ietf-interfaces" ^RFC8343^ and
+"ietf-ip" ^RFC8344^ modules in the <running>,
 <startup>, and <operational> datastores and the "ietf-hardware"
-^I-D.ietf-netmod-entity^ module in the <operational> datastore.
+^RFC8348^ module in the <operational> datastore.
 
 Newlines in leaf values are added for formatting reasons.
 
@@ -377,9 +378,8 @@ Newlines in leaf values are added for formatting reasons.
 * Example YANG Library Instance for an Advanced Server
 
 The following example extends the preceding Basic Server YANG Library
-example, by using modules from ^I-D.ietf-netmod-rfc8022bis^ and
-^I-D.ietf-i2rs-yang-network-topo^, to illustrate a slightly more
-advanced server that:
+example, by using modules from ^RFC8345^ and ^RFC8349^, to illustrate
+a slightly more advanced server that:
 
 - Has a module with features only enabled in <operational>; the
   "ietf-routing module" is supported in <running>, <startup>, and
