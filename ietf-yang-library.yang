@@ -126,7 +126,7 @@ module ietf-yang-library {
     }
   }
 
-  grouping implementation-parameters {
+  grouping module-implementation-parameters {
     description
       "Parameters for describing the implementation of a module.";
 
@@ -195,7 +195,7 @@ module ietf-yang-library {
         uses location-leaf-list;
       }
 
-      uses implementation-parameters;
+      uses module-implementation-parameters;
     }
     list import-only-module {
       key "name revision";
