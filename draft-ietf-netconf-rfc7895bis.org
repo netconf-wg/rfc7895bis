@@ -38,8 +38,8 @@ ignored by legacy clients, while providing all the data needed for
 NMDA-aware clients, which would themselves ignore the "/modules-state"
 tree.  The recommended approach to populate "/modules-state" is to
 report the schema for YANG modules that are configurable via
-conventional datastores and for which config false data nodes are
-returned via a NETCONF <get> operation, or equivalent.
+conventional configuration datastores and for which config false data
+nodes are returned via a NETCONF <get> operation, or equivalent.
 
 The YANG library information can be different on every server and it
 can change at runtime or across a server reboot. If a server
