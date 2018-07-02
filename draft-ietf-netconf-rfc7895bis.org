@@ -209,7 +209,10 @@ container has the following child nodes:
   modules that belong to the module set. A module is listed together
   with its submodules (if any), a set of features, and any deviation
   modules. The list "/yang-library/module-set/import-only-module"
-  lists all modules (and their submodules) used only for imports.
+  lists all modules (and their submodules) used only for imports.  The
+  assignment of a module to a module-set is at the server's
+  discretion.  This revision of the YANG library attaches no semantics
+  as to which module-set a module is listed in.
 
 - The "/yang-library/schema" list contains an entry for each datastore
   schema supported by the server. All conventional configuration
