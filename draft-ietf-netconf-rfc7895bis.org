@@ -295,7 +295,7 @@ that is accessed by network management protocols such as NETCONF
 secure transport layer, and the mandatory-to-implement secure
 transport is Secure Shell (SSH) ^RFC6242^. The lowest RESTCONF layer
 is HTTPS, and the mandatory-to-implement secure transport is TLS
-^RFC5246^.
+^RFC8446^.
 
 The NETCONF access control model ^RFC6536^ provides the means to
 restrict access for particular NETCONF or RESTCONF users to a

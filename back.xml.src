@@ -6,8 +6,6 @@
 
   ietf-ref:RFC3688
 
-  ietf-ref:RFC5246
-
   ietf-ref:RFC6020
 
   ietf-ref:RFC6241
@@ -25,6 +23,8 @@
   ietf-ref:RFC8174
 
   ietf-ref:RFC8342
+
+  ietf-ref:RFC8446
 
 </references>
 
