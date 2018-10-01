@@ -153,7 +153,7 @@ once.
 
 + A given module can only be implemented in one revision in all
 datastores.  If a module is implemented in more than one
-datastores, the same revision is implemented in all these
+datastore, the same revision is implemented in all these
 datastores.
 
 + Multiple revisions can be used for import, if import-by revision
