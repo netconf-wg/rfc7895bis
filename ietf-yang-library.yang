@@ -60,7 +60,7 @@ module ietf-yang-library {
   // and remove this note.
   // RFC Ed.: replace XXXX with actual RFC number and remove this
   // note.
-  revision 2018-02-21 {
+  revision 2018-10-16 {
     description
       "Added support for multiple datastores according to the
        Network Management Datastore Architecture (NMDA).";
@@ -333,14 +333,14 @@ module ietf-yang-library {
 
     uses yang-library-parameters;
 
-    leaf checksum {
+    leaf content-id {
       type string;
       mandatory true;
       description
-        "A server-generated checksum of the contents of the
+        "A server-generated identifier of the contents of the
          'yang-library' tree.  The server MUST change the value of
          this leaf if the information represented by the
-         'yang-library' tree, except 'yang-library/checksum', has
+         'yang-library' tree, except 'yang-library/content-id', has
          changed.";
     }
   }
@@ -354,14 +354,14 @@ module ietf-yang-library {
       "Generated when any YANG library information on the
        server has changed.";
 
-    leaf checksum {
+    leaf content-id {
       type leafref {
-        path "/yanglib:yang-library/yanglib:checksum";
+        path "/yanglib:yang-library/yanglib:content-id";
       }
       mandatory true;
       description
-        "Contains the YANG library checksum for the updated YANG
-         library at the time the notification is generated.";
+        "Contains the YANG library content identifier for the updated
+         YANG library at the time the notification is generated.";
     }
   }
 

@@ -88,8 +88,8 @@ The following terms are used within this document:
 - YANG library: A collection of YANG modules, submodules, datastores,
   and datastore schemas used by a server.
 
-- YANG library checksum: A server-generated checksum of the contents
-  of the YANG library.
+- YANG library content identifier: A server-generated identifier of
+  the contents of the YANG library.
 
 Tree diagrams used in this document use the notation defined in
 ^RFC8340^.
@@ -102,9 +102,9 @@ language:
 
 - name: The name of the YANG module.
 
-- revision: Each YANG module and submodule within the library SHOULD
-have a revision.  This is derived from the most recent revision
-statement within the module or submodule.
+- revision: If defined in the YANG module or submodule, the revision
+is derived from the most recent revision statement within the module
+or submodule.
 
 - submodule list: The name, and if defined, revision of each submodule
 used by the module must be identified.
@@ -127,7 +127,7 @@ application for each datastore supported by a server:
 In order to select one out of several possible data model designs, the
 following criteria were used:
 
-+ Efficient for a client to consume.
++ The information must be efficient for a client to consume.
 Since the size of the YANG library can be quite large, it should
 be possible for clients to cache the YANG library information.
 
@@ -135,7 +135,7 @@ be possible for clients to cache the YANG library information.
 or feature that is not implemented in the conventional configuration
 datastores.
 
-+ It must be possible to NOT implement a module or feature in
++ It must be possible to not implement a module or feature in
 <operational>, even if it is implemented in some other datastore.
 This is required for transition purposes; a server that wants to
 implement <operational> should not have to implement all modules at
@@ -149,7 +149,7 @@ datastores.
 + Multiple revisions can be used for import, if import-by revision
 is used.
 
-+ Make it possible to use the YANG library by schema mount
++ It must be possible to use the YANG library by schema mount
   ^I-D.ietf-netmod-schema-mount^.
 
 * YANG Library Data Model
@@ -220,25 +220,26 @@ container has the following child nodes:
   datastore has a separate entry, pointing to the same "schema" list
   element.
 
-- The "/yang-library/checksum" leaf contains the YANG library
-  checksum, which is a unique implementation-specific identifier
+- The "/yang-library/content-id" leaf contains the YANG library
+  content identifier, which is an implementation-specific identifier
   representing the current information in the YANG library on a
   specific server.  The value of this leaf MUST change whenever the
-  information in the YANG library changes. There is no requirement
-  that the same information always results in the same "checksum"
-  value. This leaf allows a client to fetch all schema information
+  information in the YANG library changes.  There is no requirement
+  that the same information always results in the same "content-id"
+  value.  This leaf allows a client to fetch all schema information
   once, cache it, and only refetch it if the value of this leaf has
-  been changed. If the value of this leaf changes, the server also
+  been changed.  If the value of this leaf changes, the server also
   generates a "yang-library-update" notification.
 
 Note that for a NETCONF server implementing the NETCONF extensions to
 support the NMDA ^I-D.ietf-netconf-nmda-netconf^, a change of the YANG
-library checksum results in a new value for the :yang-library:1.1
-capability defined in ^I-D.ietf-netconf-nmda-netconf^.  Thus, if such
-a server implements NETCONF notifications ^RFC5277^, and the
-notification "netconf-capability-change" ^RFC6470^, a
-"netconf-capability-change" notification is generated whenever the
-YANG library checksum changes.
+library content identifier results in a new value for the
+:yang-library:1.1 capability defined in
+^I-D.ietf-netconf-nmda-netconf^.  Thus, if such a server implements
+NETCONF notifications ^RFC5277^, and the notification
+"netconf-capability-change" ^RFC6470^, a "netconf-capability-change"
+notification is generated whenever the YANG library content identifier
+changes.
 
 * YANG Library YANG Module @library-module@
 
@@ -287,7 +288,7 @@ transport is Secure Shell (SSH) ^RFC6242^. The lowest RESTCONF layer
 is HTTPS, and the mandatory-to-implement secure transport is TLS
 ^RFC8446^.
 
-The NETCONF access control model ^RFC6536^ provides the means to
+The NETCONF access control model ^RFC8341^ provides the means to
 restrict access for particular NETCONF or RESTCONF users to a
 preconfigured subset of all available NETCONF or RESTCONF protocol
 operations and content.
