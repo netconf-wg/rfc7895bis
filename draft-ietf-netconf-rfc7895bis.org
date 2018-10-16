@@ -252,7 +252,7 @@ library supports the YANG modules written in any version of YANG.
 RFC Ed.: update the date below with the date of RFC publication and
 remove this note.
 
-!! include-figure ietf-yang-library.yang extract-to="ietf-yang-library@2018-02-21.yang"
+!! include-figure ietf-yang-library.yang extract-to="ietf-yang-library@2018-10-16.yang"
 
 * IANA Considerations @iana@
 
